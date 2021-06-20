@@ -1,9 +1,2 @@
-./kibana/data
-./kibana/data/
-./kibana/data/*
-./kibana/data/*/*
-
-./elastic/data
-./elastic/data/
-./elastic/data/*
-./elastic/data/*/*
+kibana/data/
+elastic/data/
