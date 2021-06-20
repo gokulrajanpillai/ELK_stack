@@ -10,3 +10,13 @@ services:
             - "./elastic/data:/usr/share/elasticsearch/data"
         container_name: "elastic_ci"
         restart: always
+    kibana:
+        build:
+            context: ./kibana
+            dockerfile: Dockerfile
+        ports:
+            - "7540:5601"
+        volumes:
+            - "./kibana/data:/usr/share/kibana/config"
+        container_name: "kibana_ci"
+        restart: always
