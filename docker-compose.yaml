@@ -7,26 +7,6 @@ services:
             - "7520:9200"
             - "7530:9300"
         volumes:
-            - "./jenkins/data:/var/jenkins_home"
-        container_name: "jenkins_ci"
-        restart: always
-    prometheus:
-        build:
-            context: ./prometheus
-            dockerfile: Dockerfile
-        ports:
-            - "7090:9090"
-        volumes:
-            - "./prometheus/data:/etc/prometheus"
-        container_name: "prometheus_ci"
-        restart: always
-    grafana:
-        build:
-            context: ./grafana
-            dockerfile: Dockerfile
-        ports:
-            - "7300:3000"
-        volumes:
-            - "./grafana/data:/var/lib/grafana"
-        container_name: "grafana_ci"
+            - "./elastic/data:/usr/share/elasticsearch/data"
+        container_name: "elastic_ci"
         restart: always
